@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { seletedProduct } from '../redux/actions/productActions';
+import { removeSelectedProduct, seletedProduct } from '../redux/actions/productActions';
 
 const ProductDetails = () => {
     const product = useSelector((state) => state.product);
@@ -22,7 +22,9 @@ const ProductDetails = () => {
         if(productId && productId!==""){
              fetchProductDetails();
         }
-           
+        return () => {
+            dispatch(removeSelectedProduct());
+        }  
     }, [productId]);
     return (
         <div className="ui grid container">
