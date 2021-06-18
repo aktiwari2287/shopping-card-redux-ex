@@ -11,10 +11,7 @@ function App() {
         <i class="pause icon"></i>
         Pause
       </button>
-      <button class="ui right labeled icon button">
-        <i class="right arrow icon"></i>
-        Next
-      </button>
+     
     </div>
   );
 }
